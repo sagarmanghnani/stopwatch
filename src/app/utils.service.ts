@@ -14,7 +14,7 @@ export class UtilsService {
     const seconds = levelInMinutes.lowerLevel;
     const milliseconds = levelInSeconds.lowerLevel;
 
-    return `${minute}:${seconds}:${milliseconds}`;
+    return `${this.showTimeFormat(2, minute)}:${this.showTimeFormat(2, seconds)}:${this.showTimeFormat(3, milliseconds)}`;
 
   }
 
@@ -25,5 +25,17 @@ export class UtilsService {
       upperLevel,
       lowerLevel
     }  
+  }
+
+  showTimeFormat(lengthOfTime:number, time:number):string{
+    const timeLength = this.countTimeLength(time);
+    const lengthDiff = lengthOfTime - timeLength;
+    const arrayToAppend = new Array(lengthDiff).fill(0);
+    return `${arrayToAppend.join('')}${time}`;
+    
+  }
+
+  countTimeLength(time:number):number{
+    return `${time}`.length
   }
 }
