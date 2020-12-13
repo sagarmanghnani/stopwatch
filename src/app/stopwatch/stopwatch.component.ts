@@ -27,9 +27,10 @@ export class StopwatchComponent implements OnInit {
     this.timerIntervalRef = setInterval(() => {
       this.timer += 10;
        const circle2Svg:HTMLElement = this.circle2.nativeElement;
-      circle2Svg.style.strokeDashoffset = `${(this.timer) * (11.52 / 1000)}`;
+      circle2Svg.style.strokeDashoffset = `${(this.timer % (1000 * 60)) * (11.52 / 1000)}`;
       if(this.util.isInteger(this.util.minutesFromMilliSeconds(this.timer))){
         circle2Svg.style.strokeDashoffset = `0`;
+        circle2Svg.style.transition = 'none';
       }
       this.isClockRunning = true;
     },10);
@@ -39,7 +40,7 @@ export class StopwatchComponent implements OnInit {
   endTimer(){
     clearInterval(this.timerIntervalRef);
     this.isClockRunning = false;
-    this.lapStartPoint = this.timer;
+    // this.lapStartPoint = this.timer;
   }
 
   resetTimer(){
