@@ -7,6 +7,11 @@ h3{
 }
 
 .laps-container{
-    height: 90%;
+    max-height: 85%;
     overflow-y: scroll;
+}
+
+.laps-manager{
+    max-height: calc(100vh - 350px);
+    height: calc(100vh - 350px);
 }
