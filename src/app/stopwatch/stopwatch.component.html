@@ -1,4 +1,4 @@
-<div class="stopwatch-container">
+<div class="stopwatch">
     <div class="svg-container">
         <svg >
             <g class="svg-grouping">
@@ -10,9 +10,9 @@
     </div>
     
     <div class="stopwatch-actions">
-        <button (click) = "startTimer()" *ngIf = "!timer"> Start </button>
-        <button (click) = "endTimer()" *ngIf = "timer"> Stop </button>
-        <button (click) = "resetTimer()" *ngIf = "timer"> Reset </button>
+        <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "startTimer()" *ngIf = "!isClockRunning" > Start </app-custom-button>
+        <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "endTimer()" *ngIf = "isClockRunning" > Stop </app-custom-button>
+        <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "resetTimer()" *ngIf = "timer"> Reset </app-custom-button>
     </div>
 
 

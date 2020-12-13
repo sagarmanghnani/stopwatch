@@ -1,0 +1,38 @@
+@import '../../styles.scss';
+
+
+@mixin common-button-styling {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 0px 6px 0px;
+}
+.outline {
+    background: transparent;
+    border: 1px solid $stopwatch-progress-bar-primary;
+    color: $stopwatch-progress-bar-primary;
+}
+
+.link {
+    background: transparent;
+    border: none;
+    color: $stopwatch-progress-bar-primary;
+}
+
+.filled {
+    background: $stopwatch-progress-bar-primary;
+    color: white;
+    border: 1px solid $stopwatch-progress-bar-primary;
+}
+
+.small {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button{
+    @include common-button-styling()
+}
+

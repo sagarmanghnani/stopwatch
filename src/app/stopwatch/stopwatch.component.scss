@@ -1,24 +1,19 @@
 @import '../../styles.scss';
 
-.stopwatch {
-    font-size: 2rem;
-    width: 12rem;
-    background: black;
-    color: wheat;
+
+@mixin distant-elements {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin center-elements {
     display: flex;
     justify-content: center;
-    height: 12rem;
     align-items: center;
-    position: relative;
-    :after{
-        background: linear-gradient(to right, #bcbcbc 25%,#ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
-        position: absolute;
-        content: '';
-        height: 4px;
-        right: 0;
-        left: 0;
-        top: 0;
-    }
+}
+.stopwatch {
+    flex-flow: column;
+    @include center-elements()
 }
 .svg-container{
     width: 250px;
@@ -41,18 +36,24 @@
     .stopwatch-container{
         position: absolute;
         font-size: 2rem;
+        color: $stopwatch-timer-color;
     }
+}
+
+.stopwatch-actions {
+    @include distant-elements()
 }
 
 
 .circle1{
     stroke: $stopwatch-progress-bar-primary;
-    stroke-width: 20px;
+    stroke-width: 7px;
 }
 
 .circle2{
-    stroke: green;
-    stroke-width: 20px;
+    stroke: black;
+    stroke-width: 7px;
     stroke-dasharray: 691.5;
     transition: all 1s linear;
 }
+

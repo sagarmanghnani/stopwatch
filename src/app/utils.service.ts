@@ -39,7 +39,7 @@ export class UtilsService {
   }
 
   minutesFromMilliSeconds(time:number): number{
-    return (time / 1000 * 60);
+    return (time / (1000 * 60));
   }
 
   isInteger(number:number) :boolean{

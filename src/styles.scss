@@ -2,3 +2,9 @@
 
 $stopwatch-progress-bar-primary:#a78751;
 $stopwatch-progress-bar-secondary:black;
+$stopwatch-timer-color:white;
+$body-background:#2f3035;
+
+body {
+    background: $body-background;
+}
