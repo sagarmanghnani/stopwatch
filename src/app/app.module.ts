@@ -7,6 +7,7 @@ import { StopwatchComponent } from './stopwatch/stopwatch.component';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { LapsManagerComponent } from './laps-manager/laps-manager.component';
 import { LapComponent } from './lap/lap.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LapComponent } from './lap/lap.component';
     StopwatchComponent,
     CustomButtonComponent,
     LapsManagerComponent,
-    LapComponent
+    LapComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

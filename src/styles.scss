@@ -8,12 +8,7 @@ $web-margin-width:80%;
 $mobile-margin-width:100%;
 body {
     background: $body-background;
-    margin: auto;
-    width: $web-margin-width;
+    margin: 0;
 }
 
-@media screen and (max-width:576){
-    body {
-        width: $mobile-margin-width;
-    }
-}
+
