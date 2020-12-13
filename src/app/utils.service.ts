@@ -32,10 +32,17 @@ export class UtilsService {
     const lengthDiff = lengthOfTime - timeLength;
     const arrayToAppend = new Array(lengthDiff).fill(0);
     return `${arrayToAppend.join('')}${time}`;
-    
   }
 
   countTimeLength(time:number):number{
     return `${time}`.length
+  }
+
+  minutesFromMilliSeconds(time:number): number{
+    return (time / 1000 * 60);
+  }
+
+  isInteger(number:number) :boolean{
+    return number % 1 === 0;
   }
 }

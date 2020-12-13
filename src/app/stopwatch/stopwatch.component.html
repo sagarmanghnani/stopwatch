@@ -1,5 +1,21 @@
-<p> {{util.milliSecondsToStandardTimeFormat(timer)}} </p>
-<button (click) = "startTimer()"> Start </button>
-<button (click) = "endTimer()"> Stop </button>
-<button (click) = "resetTimer()"> Reset </button>
+<div class="stopwatch-container">
+    <div class="svg-container">
+        <svg >
+            <g class="svg-grouping">
+                <circle class="circle1" cx = "131" cy = "130" r = "110"></circle>
+                <circle #circle2 class = "circle2" cx = "131" cy = "130" r = "110"></circle>
+            </g>
+        </svg>
+        <span class="stopwatch-container"> {{util.milliSecondsToStandardTimeFormat(timer)}} </span>
+    </div>
+    
+    <div class="stopwatch-actions">
+        <button (click) = "startTimer()" *ngIf = "!timer"> Start </button>
+        <button (click) = "endTimer()" *ngIf = "timer"> Stop </button>
+        <button (click) = "resetTimer()" *ngIf = "timer"> Reset </button>
+    </div>
+
+
+    
+</div>
 
