@@ -1,0 +1,6 @@
+<div *ngIf = "lapsList?.length">
+    <h3> Laps </h3>
+    <div *ngFor = "let lap of lapsList;let i = index">
+        <app-lap [lapData] = lap [counter] = "i + 1"></app-lap>
+    </div>
+</div>

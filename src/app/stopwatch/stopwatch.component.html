@@ -13,9 +13,11 @@
         <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "startTimer()" *ngIf = "!isClockRunning" > Start </app-custom-button>
         <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "endTimer()" *ngIf = "isClockRunning" > Stop </app-custom-button>
         <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "resetTimer()" *ngIf = "timer"> Reset </app-custom-button>
+        <app-custom-button [fill] = "'outline'" [size] = "'small'" (buttonClick) = "recordLap()" *ngIf = "isClockRunning"> Lap </app-custom-button>
     </div>
+</div>
 
-
-    
+<div>
+    <app-laps-manager #lapManager> </app-laps-manager>
 </div>
 

@@ -12,4 +12,9 @@ export class LapData {
         const timeDiff = this.endTime - this.startTime;
         return this.util.milliSecondsToStandardTimeFormat(timeDiff);
     }
+
+    assignStartTimeEndTime(startTime:number, endTime:number){
+        this.startTime = startTime ?? 0;
+        this.endTime = endTime ?? 0
+    }
 }

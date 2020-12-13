@@ -1,0 +1,7 @@
+@import '../../styles.scss';
+
+.lap-styling {
+    display: flex;
+    color: $stopwatch-timer-color;
+    justify-content: space-between;
+}

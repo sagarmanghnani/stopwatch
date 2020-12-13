@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StopwatchComponent } from './stopwatch/stopwatch.component';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
+import { LapsManagerComponent } from './laps-manager/laps-manager.component';
+import { LapComponent } from './lap/lap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StopwatchComponent,
-    CustomButtonComponent
+    CustomButtonComponent,
+    LapsManagerComponent,
+    LapComponent
   ],
   imports: [
     BrowserModule,

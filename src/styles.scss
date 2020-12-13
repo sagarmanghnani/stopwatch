@@ -4,7 +4,16 @@ $stopwatch-progress-bar-primary:#a78751;
 $stopwatch-progress-bar-secondary:black;
 $stopwatch-timer-color:white;
 $body-background:#2f3035;
-
+$web-margin-width:80%;
+$mobile-margin-width:100%;
 body {
     background: $body-background;
+    margin: auto;
+    width: $web-margin-width;
+}
+
+@media screen and (max-width:576){
+    body {
+        width: $mobile-margin-width;
+    }
 }

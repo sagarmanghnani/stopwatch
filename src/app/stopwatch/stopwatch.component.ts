@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { LapsManagerComponent } from '../laps-manager/laps-manager.component';
 import { UtilsService } from '../utils.service';
 
 @Component({
@@ -11,8 +12,9 @@ export class StopwatchComponent implements OnInit {
   timer:number = 0;
   timerIntervalRef:any;
   isClockRunning:boolean = false;
+  lapStartPoint:number = 0;
   @ViewChild('circle2')circle2:ElementRef
-  butt
+  @ViewChild('lapManager')lapManager:LapsManagerComponent
   constructor(
     public util:UtilsService
   ) { }
@@ -36,13 +38,20 @@ export class StopwatchComponent implements OnInit {
   endTimer(){
     clearInterval(this.timerIntervalRef);
     this.isClockRunning = false;
+    this.lapStartPoint = this.timer;
   }
 
   resetTimer(){
+    this.lapStartPoint = 0;
     this.timer = 0;
     const circle2Svg:HTMLElement = this.circle2.nativeElement;
     circle2Svg.style.strokeDashoffset = `0`;
     circle2Svg.style.transition = 'none';
+  }
+
+  recordLap(){
+    this.lapManager.createLap(this.lapStartPoint, this.timer);
+    this.lapStartPoint = this.timer;
   }
 
   
