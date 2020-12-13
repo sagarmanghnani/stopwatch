@@ -13,9 +13,7 @@ export class UtilsService {
     const minute = levelInMinutes.upperLevel;
     const seconds = levelInMinutes.lowerLevel;
     const milliseconds = levelInSeconds.lowerLevel;
-
     return `${this.showTimeFormat(2, minute)}:${this.showTimeFormat(2, seconds)}:${this.showTimeFormat(3, milliseconds)}`;
-
   }
 
   timeLevelConversion(timeDiffInLowerLevel, conversionRate){
@@ -40,6 +38,10 @@ export class UtilsService {
 
   minutesFromMilliSeconds(time:number): number{
     return (time / (1000 * 60));
+  }
+
+  secondsFromMilliSeconds(time:number):number {
+    return (time / 1000);
   }
 
   isInteger(number:number) :boolean{

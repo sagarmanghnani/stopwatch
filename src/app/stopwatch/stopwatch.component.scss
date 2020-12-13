@@ -51,9 +51,13 @@
 }
 
 .circle2{
-    stroke: black;
+    stroke: $stopwatch-progress-bar-secondary;
     stroke-width: 7px;
     stroke-dasharray: 691.5;
     transition: all 1s linear;
+}
+
+.lap-manager-container{
+    max-height: calc(100vh - 278px);
 }
 

@@ -13,6 +13,7 @@ export class StopwatchComponent implements OnInit {
   timerIntervalRef:any;
   isClockRunning:boolean = false;
   lapStartPoint:number = 0;
+  showTimer:string;
   @ViewChild('circle2')circle2:ElementRef
   @ViewChild('lapManager')lapManager:LapsManagerComponent
   constructor(
@@ -24,14 +25,14 @@ export class StopwatchComponent implements OnInit {
 
   startTimer(){
     this.timerIntervalRef = setInterval(() => {
-      this.timer++;
-      const circle2Svg:HTMLElement = this.circle2.nativeElement;
+      this.timer += 10;
+       const circle2Svg:HTMLElement = this.circle2.nativeElement;
       circle2Svg.style.strokeDashoffset = `${(this.timer) * (11.52 / 1000)}`;
       if(this.util.isInteger(this.util.minutesFromMilliSeconds(this.timer))){
         circle2Svg.style.strokeDashoffset = `0`;
       }
       this.isClockRunning = true;
-    },1);
+    },10);
     
   }
 
